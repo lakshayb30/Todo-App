@@ -50,5 +50,5 @@ A simple React-based Todo Application with priority management and local storage
 
 
 ## Author
-[Your Name](https://github.com/your-username)
+[lakshay bhatia](https://github.com/lakshayb30)
 
