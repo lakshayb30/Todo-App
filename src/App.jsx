@@ -7,27 +7,10 @@ function App() {
   const [tasks, settasks] = useState(() => {
     return localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : [];
   });
-  const [quote,setquote] = useState([])
 
   const inputref = useRef()
 
-  async function fetchquote() {
-    try{
-      const res = await axios.get('http://api.quotable.io/random')
-      setquote(res.data.content)
-    } catch(err) {
-      console.error("error in quote api",err);
-    }
-  }
-  useEffect(()=>{
-    
-    fetchquote()
 
-  },[])
-
-  useEffect(() => {
-    console.log(quote)
-  },[quote])
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -95,7 +78,7 @@ function App() {
 
   return (
     <>
-      <Header cont={quote} />
+      <Header />
       <TaskInput/>
       <TaskList/>
     </>
